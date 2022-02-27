@@ -56,6 +56,8 @@ Where +x is Forwards towrads the Wall and The Exit Gate from the Originla Positi
 - bool: JumpingIsPossible()
 - bool: ClimbingIsPossible()
 
+![ScreenShot](3DRaySensors.PNG)
+
 ### Extensive Reward Shaping
 
 Collaborative Unity Group Training is employed, with the rewards are Allocated to the Prisoner Group.  The ExperimentControl.cs script manages the registration of both Prisoners into the Group via RegisterAgent() and the assignment of Group Rewards calls.  
