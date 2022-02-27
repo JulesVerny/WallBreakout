@@ -1,26 +1,26 @@
 # Unity ML Agent: Prisoner Break out
 
-A review of Unity ML Agents to train Agents work in a collaborative beahviours. The objective is for the two prisoner agents to work together to devlop an escape plan.  
+A review of Unity ML Agents to train Agents work with highly collaborative behaviours. The objective is for the two Prisoner agents to work together to develop an escape plan. (c.f. The previous DuffBall experiment, https://github.com/JulesVerny/DuffBallML could acheive goal success with little team player collaboration). The intention of this experiement is to explicitly require collaborative actions for success between two ML Agents.   
 
 ![ScreenShot](SC3.PNG)
 
-Please see the results of the Trained Prisoners Agents playing reasonably well on You Tube at << Your Tube Link   >> 
+Please see the results of the Trained Prisoners Agents execute a reasonable esacpe plan sequence on You Tube at << Your Tube Link   >> 
 
 ### Break out Overview 
 
-The Environment consists of two Prisoner Agents.  The Agents can be pursuaded through a sequence of reward objectives to perform an escape sequence of moving a crate, jumping and climbing onto the crate, jumping and climbing onto the wall, and then to teh exit gate. The jumping and climbing actions require the Prisoner agents to collaborate and synchronise their actions together.    
+The Environment consists of two Prisoner Agents.  The Agents can be pursuaded to execute an escape sequence through the use of a reward objective sequence: Moving a Crate, Jumping and Climbing onto the Crate, Jumping and Climbing onto the Wall, and then move towards an exit gate. The jumping and climbing actions require the Prisoner Agents to collaborate and synchronise their actions together.  One Prisoner has to Kneel down, to enable the other to jump up onto the next level. And once on the next level, a prisoner hs to kneel down, to pull up the otehr Prisoner that is Climbing up.     
 
 ![ScreenShot](SC4.PNG)
 
-The Prisoner is encoded to be in one of the following states: { StandingIdle, Walking, PushingCrate, KneelingDown, JumpingUp, PullingUpCollegue, ClimbingUp }
+The Prisoner Agent is encoded to be in one of the following states: { StandingIdle, Walking, PushingCrate, KneelingDown, JumpingUp, PullingUpCollegue, ClimbingUp }
 
 The Prisoner Agents have possible Actions:    { None, RotateLeft, RotateRight, WalkForward, PushCrate, KneelDown, StandUpIdle, JumpUp, ClimbUp, PullUp }
 
-These Actions are Masked, such that cannot PushCrate, if the Prisoner is not in the proximatory to the Crate. The JumpUp and ClimbUp actions cannot be accomplished unless the Prisoner, and the Co Prisoner are in compatible states. In order to Jump Up onto the crate or Wall, the other Prisoner needs to kneeling in front, on the glround or on the crate to support the jump. And in order to climb up the co prisoner needs to to be above, either on the crate or on the wall to help pull the prisoner up.  
+These Actions are Masked, such that they cannot PushCrate, if the Prisoner is not in the proximatory to the Crate. Neither can the JumpUp and ClimbUp actions be accomplished unless the Prisoner, and the Co Prisoner are in compatible states. In order to Jump Up onto the crate or Wall, the other Prisoner needs to kneeling in front, on the ground or on the crate to support the jump. And in order to climb up the co prisoner needs to to be above, either on the crate or on the wall to help pull the prisoner up.  
 
 ![ScreenShot](SC1.PNG)
 
-The scenario is based upon the use of significant number of spatial and state checks, which affects what prisoners are allowed to perform. These are reflecetd within the Observations space, to help influence the Agent training. 
+The scenario is based upon the use of significant number of spatial and state checks, which affects what prisoners are allowed to perform. These are reflected within the Observations space, to help influence the Agent training. 
  
 ### Observation Space 
 The Observation Space consists of:
@@ -58,9 +58,9 @@ Where +x is Forwards towrads the Wall and The Exit Gate from the Originla Positi
 
 ### Extensive Reward Shaping
 
-Collaborative Unity Group Training is employed. The rewards are Allocated on a Group basis.  The ExperimentControl.cs script manages the registration of both Prionsers into a Groups and the assignment of Group Rewards via RegisterAgent() calls.  
+Collaborative Unity Group Training is employed, with the rewards are Allocated to the Prisoner Group.  The ExperimentControl.cs script manages the registration of both Prisoners into the Group via RegisterAgent() and the assignment of Group Rewards calls.  
 
-A Significant amount of Reward Shaping is required to get any Agent Discovery, Exploitation to make any Progress in this scenario. It being extreemly unlikely that the Agents would discover the means to capture overall Objective of both reaching the Exit Gate, from their initial positions. There are a number of collaborative steps required to get anywhere. So the scenario has had to be partitioned into Sub Objectives, with Partial rewards Assigned: 
+A Significant amount of Reward Shaping is required to get any Agent Discovery, Exploitation to make any Progress in this scenario. It being extremely unlikely that the Agents would discover the means to capture overall Objective of both reaching the Exit Gate, from their initial positions in a single Objective/Reward phase. A number of collaborative steps required to get anywhere. So the scenario has been partitioned into Sub Objectives, with Partial rewards Assigned to help Agent Training through the sequence: 
 
 | Level |Level Objective                    | Reward   |
 |:-----:|:---------------------------------:|:------:|
@@ -115,16 +115,16 @@ See the eventual Trained Prisoners Escape  on You Tube at  <<  You Tube Ref  >>
 
 - The Eventual Prisoner Trained Performance is a success rate in excess of 8 attempts out of 10. 
 
-- This experiment would be better classed as Reinforcement Training, ratherthan  Machine Learning. A Significant amount of reward Shaping and Sub Objectives were required to get the Agents to discover and advance through the each of scenario steps of the scenario.  
-- The level of Reward and Objective Shaping could well have been applied to similar level of programmed logic, with mroe robust results.
-- The Agents did however discover some weaknesses in the original environment, and exploited these to acheive none perceived Prisoner breakouts. (These exploits have been removed, for a more robust, and obvious breakout sequence)    
+- This experiment would be better classed as Reinforcement Training, rather than  Machine Learning. A Significant amount of Reward Shaping and Sub Objectives were required to get the Agents any where near discovering and advancing through this prisoner escape scenario.
+- As such it really only represents a reward encoding of an apriori sequence. Instead the level of Reward and Objective Shaping effort could well have been better applied to similar level of programmed logic. The consequence being a more robust, deterministic and efficient solution.
+- The Agents did however discover and exploit some weaknesses in the original environment. Demonstrating some originalilty and deviousness. (These exploits have now been removed, for a more robust, and obvious, 'intended' breakout sequence)    
 - This Experiment exposes the limits of Unity ML Agents, and Reinforcement Learning, in such tight collaborative  conditionally sequenced environments. 
 
 Happy for Any Discusssion, Comments and Improvements.
 
 ## Download and Use
 
-This project has been exported as a Unity Package into the Unity WallBreakout folder containing the Breakout Scene, Scripts, Models etc. I am not so familiar with Unity Package export/ imports, so hopefully this is the most convenient way to import into your Unity Projects.   This can be downladed and imported into Unity, or possibly via the Unity Git import directly by reference to the .json file from the Unity Package Manager.  You will also need to import the Unity ML Agents run time package (Note this project was developed and Tested using Unity ML Agents Release 19)
+This project has been exported as a Unity Package into the Unity WallBreakout folder containing the Breakout Scene, Scripts, Models etc. I am not so familiar with Unity Package export/ imports, so hopefully this is the most convenient way to import the scenae and experiment into a Unity Project.   The Unity Package can be downladed and imported into Unity, or possibly via the Unity Git import directly by reference to the .json file from the Unity Package Manager.  You will also need to import the Unity ML Agents run time package (Note this project was developed and Tested using Unity ML Agents Release 19)
 
 The Trained Brains .onxx files for the eventual Prisoner ML Agents are in the Brains Folder. These can be copied into the ML Agents behaviour components to observe the trained behaviours. 
 
