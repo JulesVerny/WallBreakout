@@ -4,7 +4,7 @@ A review of Unity ML Agents to train Agents work with highly collaborative behav
 
 ![ScreenShot](SC3.PNG)
 
-Please see the results of the Trained Prisoners Agents execute a reasonable esacpe plan sequence on You Tube at << Your Tube Link   >> 
+Please see the results of the Trained Prisoners Agents execute a reasonable esacpe plan sequence on You Tube at https://youtu.be/y5_865gc4QM 
 
 ### Break out Overview 
 
@@ -113,7 +113,7 @@ The following Tensorboard Grapth illustrates the Group Reward Progress on a very
 
 ## Conclusions
 
-See the eventual Trained Prisoners Escape  on You Tube at  <<  You Tube Ref  >>
+See the eventual Trained Prisoners Escape  on You Tube at  https://youtu.be/y5_865gc4QM
 
 - The Eventual Prisoner Trained Performance is a success rate in excess of 9 attempts out of 10. 
 
