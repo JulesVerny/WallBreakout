@@ -107,19 +107,20 @@ The Esential POCA Configuration requries a significant Time Horizon and a High G
  - gamma: 0.997
  - time_horizon: 512
  
-The following Tensorboard Grapth illustrates the Group Reward Progress on a very long 50 Million Training Step Run. The first level 17 "Prisoners breakout actually occurs around 10 Million steps. The extended perpetual Level 18 Training, is to reinforce, and improve the Agnets performance over the reamining 409 Million Steps. this can be seen in the steady and asymptopic growth of the Group Reward signal. 
+The following Tensorboard Grapth illustrates the Group Reward Progress on a very long 50 Million Training Step Run. The first level 18 "Prisoners breakout actually occurs around 17 Million steps. With steady state breakout performance acheived by 20 Million Steps. The extended perpetual Level 19 Training, is to reinforce, and improve the Agents performance over the remaining 30 Million Steps. This can be seen in the final steady and asymptopic growth of the Group Reward signal below. 
 
-![ScreenShot](Run12at50M.PNG)
+![ScreenShot](Run14.PNG)
 
 ## Conclusions
 
 See the eventual Trained Prisoners Escape  on You Tube at  <<  You Tube Ref  >>
 
-- The Eventual Prisoner Trained Performance is a success rate in excess of 8 attempts out of 10. 
+- The Eventual Prisoner Trained Performance is a success rate in excess of 9 attempts out of 10. 
 
 - This experiment would be better classed as Reinforcement Training, rather than  Machine Learning. A Significant amount of Reward Shaping and Sub Objectives were required to get the Agents any where near discovering and advancing through this prisoner escape scenario.
 - As such it really only represents a reward encoding of an apriori sequence. Instead the level of Reward and Objective Shaping effort could well have been better applied to similar level of programmed logic. The consequence being a more robust, deterministic and efficient solution.
-- The Agents did however discover and exploit some weaknesses in the original environment. Demonstrating some originalilty and deviousness. (These exploits have now been removed, for a more robust, and obvious, 'intended' breakout sequence)    
+- The Agents did however discover and exploit some weaknesses in the original environment. Demonstrating some originalilty and deviousness. (These exploits have now been removed, for a more robust, and obvious, 'intended' breakout sequence)  
+- The eventual Perfomance is highly optimised, with all Jump Kneeling support, ending up as just being quick dip downs, and little to no time to run the pull up animations, with just a quick and simple kneel down being sufficient to start the Co Prisoner Climb Ups.     
 - This Experiment exposes the limits of Unity ML Agents, and Reinforcement Learning, in such tight collaborative  conditionally sequenced environments. 
 
 Happy for Any Discusssion, Comments and Improvements.
